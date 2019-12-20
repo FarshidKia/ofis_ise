@@ -18,6 +18,7 @@ namespace ofis_ise.Models.EntityFramework
         public ofissEntities()
             : base("name=ofissEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

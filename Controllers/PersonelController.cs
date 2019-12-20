@@ -1,4 +1,5 @@
 ﻿using ofis_ise.Models.EntityFramework;
+using ofis_ise.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,7 +25,7 @@ namespace ofis_ise.Controllers
         {
             var model = new PersonelFormViewModel()
             {
-                departmanlar = db.Departman.ToList(),
+                Departmanlar = db.Departman.ToList(),
                 Personel = new Personel()
             };
 
@@ -38,7 +39,7 @@ namespace ofis_ise.Controllers
             {
                 var model = new PersonelFormViewModel()
                 {
-                    departmanlar = db.Departman.ToList(),
+                    Departmanlar = db.Departman.ToList(),
                     Personel = personel
                 };
                 return View("PersonelForm", model);
@@ -58,7 +59,7 @@ namespace ofis_ise.Controllers
         {
             var model = new PersonelFormViewModel()
             {
-                departmanlar = db.Departman.ToList(),
+                Departmanlar = db.Departman.ToList(),
                 Personel = db.Personel.Find(id)
             };
 
