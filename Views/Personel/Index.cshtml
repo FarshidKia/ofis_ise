@@ -1,0 +1,44 @@
+﻿@model List<ofis_ise.Models.EntityFramework.Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Yeni Personel", "Yeni", null, new { @class = "btn btn-success" })
+<h2>Personel Listesi</h2>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Departman</th>
+            <th scope="col">Yaş</th>
+            <th scope="col">Maaş</th>
+            <th scope="col">DoğumTarihi</th>
+            <th scope="col">Cinsiyet</th>
+            <th scope="col">EvlilikDurumu</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personel in Model)
+        {
+            <tr>
+                <td>@personel.Ad</td>
+                <td>@personel.Soyad</td>
+                <td>@personel.Departman.Ad</td>
+                <td>@personel.Yas</td>
+                <td>@personel.Mass</td>
+                <td>@personel.DogumTarihi.Value.ToString("dd-MM-yyyy")</td> @*//.Value.ToString("dd-MM-yyyy")*@
+                <td>@(personel.Cinsiyet == true ? "Kadın" : "Erkek")</td>
+                <td>@(personel.Evlimi == true ? "Evli" : "Bekar")</td>
+                <td>@Html.ActionLink("Güncelle", "Guncelle", new { id = personel.Id }, new { @class = "btn btn-success" })</td>
+                <td>@Html.ActionLink("Sil", "Sil", new { id = personel.Id }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
