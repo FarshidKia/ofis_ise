@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ofis_ise.Controllers
 {
+    [Authorize(Roles = "A,U")]
     public class DepartmanController : Controller
     {
         // GET: Departman

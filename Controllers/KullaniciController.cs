@@ -10,6 +10,7 @@ using ofis_ise.Models.EntityFramework;
 
 namespace ofis_ise.Controllers
 {
+    [Authorize(Roles = "A")]
     public class KullaniciController : Controller
     {
         private ofissEntities db = new ofissEntities();

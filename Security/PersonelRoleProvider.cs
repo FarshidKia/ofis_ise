@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ofis_ise.Models.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,7 +44,10 @@ namespace ofis_ise.Security
 
         public override string[] GetRolesForUser(string username) //bizim için önemli olan metot
         {
-            throw new NotImplementedException();
+            ofissEntities db = new ofissEntities();
+            var kullanici = db.Kullanici.FirstOrDefault(x => x.Ad == username);
+            //throw new NotImplementedException();
+            return new string[] {kullanici.Role};
         }
 
         public override string[] GetUsersInRole(string roleName)

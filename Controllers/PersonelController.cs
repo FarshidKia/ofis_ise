@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ofis_ise.Controllers
 {
+    [Authorize(Roles = "A,U")]
     public class PersonelController : Controller
     {
         // GET: Personel
@@ -19,7 +20,7 @@ namespace ofis_ise.Controllers
             var model = db.Personel.Include(x => x.Departman).ToList();
             return View(model);
         }
-        [Authorize(Roles ="A")]
+       
 
         public ActionResult Yeni()
 
