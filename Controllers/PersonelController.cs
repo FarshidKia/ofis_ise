@@ -81,5 +81,10 @@ namespace ofis_ise.Controllers
             var model = db.Personel.Where(x => x.DepartmanId == id).ToList();
             return PartialView(model);
         }
+        public ActionResult ToplamMaas()
+        {
+            ViewBag.Maas = db.Personel.Sum(x=>x.Mass);
+            return PartialView();
+        }
     }
 }
