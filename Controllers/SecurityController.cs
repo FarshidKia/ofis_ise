@@ -8,7 +8,7 @@ using System.Web.Security;
 
 namespace ofis_ise.Controllers
 {
-    [AllowAnonymous]
+    
     public class SecurityController : Controller
     {
         // GET: Security
@@ -35,6 +35,7 @@ namespace ofis_ise.Controllers
             }
             //return View();
         }
+        [AllowAnonymous]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
