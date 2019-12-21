@@ -1,4 +1,5 @@
 ﻿using ofis_ise.Models.EntityFramework;
+using ofis_ise.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,11 @@ namespace ofis_ise.Controllers
             {
                 return View("DepartmanForm");
             }
+            MesajViewModel model = new MesajViewModel();
             if (departman.Id == 0)
             {
                 db.Departman.Add(departman);
+                model.Mesaj = departman.Ad+"başarıyla eklendi..";
             }
             else
             {
@@ -43,10 +46,15 @@ namespace ofis_ise.Controllers
                     return HttpNotFound();
                 }
                 GuncellenecekDepartman.Ad = departman.Ad;
+                model.Mesaj = departman.Ad + "başarıyla güncellendi..";
             }
             //db.Departman.Add(departman);
             db.SaveChanges();
-            return RedirectToAction("Index", "Departman");
+            model.Status=true;
+            model.LinkText = "Departman listesi";
+            model.Url = "/Departman";
+
+            return View("_Mesaj",model);
 
         }
 
