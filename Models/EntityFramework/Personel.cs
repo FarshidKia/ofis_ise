@@ -15,18 +15,29 @@ namespace ofis_ise.Models.EntityFramework
 
     public partial class Personel
     {
+        [Display(Name = "Personel Id")]
         public int Id { get; set; }
         [Display(Name ="Departman Adý")]
+        [Required(ErrorMessage = "Departman Adý zorunludur!")]
+
         public Nullable<int> DepartmanId { get; set; }
+        [Required(ErrorMessage = "Ad zorunludur!")]
         public string Ad { get; set; }
+        [Required(ErrorMessage = "Soyad zorunludur!")]
         public string Soyad { get; set; }
+        [Display(Name = "Yaþ")]
+        [Required(ErrorMessage = "Yaþ zorunludur!")]
         public Nullable<byte> Yas { get; set; }
         [Display(Name ="Maaþ")]
+        [Required(ErrorMessage = "Maþþ zorunludur!")]
         public Nullable<short> Mass { get; set; }
         [Display(Name = "Doðum Tarihi")]
+        [Required(ErrorMessage = "Doðum tarihi zorunludur!")]
         public Nullable<System.DateTime> DogumTarihi { get; set; }
+        [Required(ErrorMessage = "Cinsiyet zorunludur!")]
         public bool Cinsiyet { get; set; }
         [Display(Name = "Medeni Durumu")]
+        [Required(ErrorMessage = "Medeni durum zorunludur!")]
         public bool Evlimi { get; set; }
     
         public virtual Departman Departman { get; set; }

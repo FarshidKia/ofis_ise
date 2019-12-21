@@ -24,7 +24,7 @@
         @Html.LabelFor(m => m.Ad)
         @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Ad)
-
+        @*kullanıcıya hata mesajı eklendi*@
     </div>
     @Html.HiddenFor(m => m.Id)
     <button type="submit" class="btn btn-success">Kaydet</button>
