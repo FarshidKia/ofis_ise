@@ -30,6 +30,7 @@ namespace ofis_ise.Models.EntityFramework
         public Nullable<byte> Yas { get; set; }
         [Display(Name ="Maaþ")]
         [Required(ErrorMessage = "Maþþ zorunludur!")]
+        [Range(3500,10000,ErrorMessage ="Maaþ alaný 3500 ile 10000 arasýnda olmalýdýr!")]
         public Nullable<short> Mass { get; set; }
         [Display(Name = "Doðum Tarihi")]
         [Required(ErrorMessage = "Doðum tarihi zorunludur!")]
