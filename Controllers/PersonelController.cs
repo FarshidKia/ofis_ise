@@ -19,6 +19,7 @@ namespace ofis_ise.Controllers
             var model = db.Personel.Include(x => x.Departman).ToList();
             return View(model);
         }
+        [Authorize(Roles ="A")]
 
         public ActionResult Yeni()
 

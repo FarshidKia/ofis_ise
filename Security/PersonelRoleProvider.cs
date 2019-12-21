@@ -41,7 +41,7 @@ namespace ofis_ise.Security
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)
+        public override string[] GetRolesForUser(string username) //bizim için önemli olan metot
         {
             throw new NotImplementedException();
         }
