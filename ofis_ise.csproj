@@ -474,6 +474,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -530,6 +531,12 @@
     <Content Include="Views\Personel\PersonelleriListele.cshtml" />
     <Content Include="Views\Personel\ToplamMaas.cshtml" />
     <Content Include="Views\Shared\_Mesaj.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Kullanici\Create.cshtml" />
+    <Content Include="Views\Kullanici\Delete.cshtml" />
+    <Content Include="Views\Kullanici\Details.cshtml" />
+    <Content Include="Views\Kullanici\Edit.cshtml" />
+    <Content Include="Views\Kullanici\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
