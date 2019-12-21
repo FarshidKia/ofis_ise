@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ofis_ise.Models.EntityFramework.Personel>
+<h1>Personel Listesi</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Doğum Tarihi</th>
+            <th>Maaş</th>
+            <
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personel in Model)
+        {
+            <tr>
+                <th>@personel.Ad</th>
+                <th>@personel.Soyad</th>
+                <th>@personel.DogumTarihi.Value.ToShortDateString()</th>
+                <th>@personel.Mass</th>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
