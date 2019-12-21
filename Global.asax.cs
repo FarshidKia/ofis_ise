@@ -14,6 +14,7 @@ namespace ofis_ise
             GlobalFilters.Filters.Add(new AuthorizeAttribute());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
     }
 }

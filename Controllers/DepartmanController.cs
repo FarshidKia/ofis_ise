@@ -14,7 +14,7 @@ namespace ofis_ise.Controllers
     {
         // GET: Departman
         ofissEntities db = new ofissEntities();
-        [HandleError]
+        //[HandleError] proje seviyesine çıkartıldı
         public ActionResult Index()
         {
             var model = db.Departman.ToList();
