@@ -14,6 +14,7 @@ namespace ofis_ise.Controllers
     {
         // GET: Departman
         ofissEntities db = new ofissEntities();
+        [HandleError]
         public ActionResult Index()
         {
             var model = db.Departman.ToList();
